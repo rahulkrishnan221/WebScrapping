@@ -32,12 +32,12 @@ public class table_read {
         Document doc=Jsoup.connect("http://evarsity.srmuniv.ac.in/srmswi/resource/StudentDetailsResources.jsp?resourceid=7").cookies(cookies).get();
        Element table = doc.select("table").get(0); //select the first table.
        // System.out.println(table);
-     //   Elements rows = table.select("tr");
+       Elements rows = table.select("tr");
 
-        Iterator<Element> iterator = table.select("tr").iterator();
+        Iterator<Element> iterator = rows.select("tr").iterator();
         while(iterator.hasNext()){
             System.out.println(iterator.next().text()); //kolom -1
-            
+
         }
 
       /*  for (int i = 1; i < rows.size(); i++) { //first row is the col names so skip it.
@@ -46,8 +46,8 @@ public class table_read {
           System.out.println(cols);
 
 
-        }
-        */
+        } */
+
 
     }
 }
